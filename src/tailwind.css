@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #afe0ad;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.fondo {
+    background: #59b275;
+}
+
+.fondo2 {
+    background: #33a55b;
+}
