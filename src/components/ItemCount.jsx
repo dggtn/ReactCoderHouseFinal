@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 export default function ItemCount(props) {
-    const [cantidad, setCantidad] = useState(props.stock > 0 ? 1 : 0)
+    const [cantidad, setCantidad] = useState(props.initial)
 
     function onAdd() {
         if (props.stock > 0) {
-            console.log("Se agregaron: ", cantidad)
+            props.onAdd(cantidad);
         }
     }
 
@@ -28,7 +28,7 @@ export default function ItemCount(props) {
             <button onClick={decrementar}>-</button>
             <input type="text" value={cantidad}/>
             <button onClick={aumentar}>+</button>
-            <button onClick={onAdd}>Agregar al carrito</button>
+            <button onClick={onAdd} className='bg-white/60 rounded-lg text-black text-m m-2 px-4 py-0.6 flex justify-center items-center'>Agregar al carrito</button>
         </div>
     );
 }

@@ -13,7 +13,7 @@ export default function NavBar() {
                 </li>
                 <li>
                     <NavLink
-                        to='/category/1'
+                        to='/category/frutas_secas'
                         className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Frutos Secos
@@ -21,7 +21,7 @@ export default function NavBar() {
                 </li>
                 <li>
                     <NavLink
-                        to='/category/2'
+                        to='/category/lacteos'
                         className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Lacteos
@@ -29,7 +29,7 @@ export default function NavBar() {
                 </li>
                 <li>
                     <NavLink
-                        to='/category/3'
+                        to='/category/bebidas'
                         className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Bebidas
@@ -37,7 +37,7 @@ export default function NavBar() {
                 </li>
                 <li>
                     <NavLink
-                        to='/category/4'
+                        to='/category/especias'
                         className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Especies
@@ -45,7 +45,7 @@ export default function NavBar() {
                 </li>
                 <li>
                     <NavLink
-                        to='/category/5'
+                        to='/category/frutas'
                         className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Frutas

@@ -1,27 +1,26 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { obtenerProductoPorId } from '../assets/api';
 import { useParams } from "react-router-dom";
+import { getById } from "../repository/item.repository";
 
 export default function ItemDetailContainer() {
     const params = useParams();
     const [item, setItem] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(()=>{
-        const promise = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(obtenerProductoPorId(params.id))
-            }, 2000)
-        })
-
-        promise.then((itemEncontrado) => {
-            setItem(itemEncontrado);
+    useEffect(()=> {
+        getById(params.id).then( (item) => {
+            setItem(item);
+            setIsLoading(false)
+        },
+        (error) => {
+            console.log(error.message);
         })
     }, [params])
 
     return (
         <div className='flex flex-col items-center mt-20 mb-40'>
-            <ItemDetail item={item}/>
+            {isLoading ? <span>Loading...</span> : <ItemDetail item={item}/> }
         </div>
     );
 }
